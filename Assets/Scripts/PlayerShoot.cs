@@ -10,6 +10,8 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] bool isPowerUp;
     private float nextFireTime = 0f;
 
+    [SerializeField] AudioClip clip;
+
 
     private float originalFireRate;
     private Coroutine powerUpCoroutine;
@@ -24,6 +26,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Time.time >= nextFireTime)
         {
+            FXManager.fxManagerInstance.PlaySound(clip);
             Shoot();
             nextFireTime = Time.time + fireRate;
         }
@@ -37,7 +40,6 @@ public class PlayerShoot : MonoBehaviour
                 fireRate = originalFireRate;
             }
         }
-
     }
 
     void Shoot()

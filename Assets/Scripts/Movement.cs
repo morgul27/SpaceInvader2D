@@ -11,6 +11,6 @@ public class Movement : MonoBehaviour
     }
 
     //en el void start
-    //rb2D.linearValocity = bulletDirectionm * bulletSpeed;
+    //rb2D.linearValocity = bulletDirection * bulletSpeed;
 
 }
