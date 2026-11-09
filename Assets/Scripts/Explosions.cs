@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class Explosions : MonoBehaviour
 {
-    public GameObject explosionPrefab;
+    [SerializeField] float tiempoDeVida = 1f;
 
-    void Morir()
+    void Start()
     {
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
-        Destroy(gameObject);
+        Destroy(gameObject, tiempoDeVida);
     }
 }

@@ -6,10 +6,12 @@ public class BulletDamage : MonoBehaviour
     {
         if (collision.gameObject.layer == 11)
         {
-            EnemyPoint enemy = collision.gameObject.GetComponent<EnemyPoint>();
-
-            Destroy(collision.gameObject);
-            ScoreManager.scoreManagerInstance.AddScore(enemy.point);
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            enemy.life -= 1;
+            if(enemy.life <= 0)
+            {
+                enemy.Morir();
+            }
             Destroy(gameObject);
         }
     }
