@@ -210,6 +210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bcc293ff0c52c0419f4d243c3b8811e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPoint
-  efectoExplosionPrefab: {fileID: 7064008340077560125, guid: a6008a11e46e4f6419a2f1464e3b1236, type: 3}
+  smallExplotion: {fileID: 0}
+  bigExplosion: {fileID: 7064008340077560125, guid: a6008a11e46e4f6419a2f1464e3b1236, type: 3}
   point: 5
   life: 1
+  smallExplosionSound: {fileID: 0}
+  bigExplosionSound: {fileID: 8300000, guid: a66b0dad857f1524f8cf061108ebd8ab, type: 3}

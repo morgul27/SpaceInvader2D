@@ -4,8 +4,9 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
 
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] Vector2 movement;
+    [SerializeField] Animator animator;
 
+    [SerializeField] Vector2 movement;
     private float minX, maxX, minY, maxY;
 
     void Start()
@@ -30,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
 
         movement = new Vector2(x, y).normalized;
+        //animator.SetFloat("Horizontal", movement.x);
+        //animator.SetFloat("Vertical", movement.y);
+        //animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     void FixedUpdate() //el update registra el boton y el fixed lo hace, por lo que el update realiza en el siguiente frame luego de registrarlo
