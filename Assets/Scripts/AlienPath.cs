@@ -8,9 +8,21 @@ public class AlienPath : MonoBehaviour
 
     private void Awake()
     {
-        int indiceAleatorio = Random.Range(0, 2);
+        int indiceAleatorio = Random.Range(0, 3);
         Debug.Log("numero aleatorio es " + indiceAleatorio);
-        nodos = SpawnersManagers.spawnersManagersInstance.nodos;
+
+        switch (indiceAleatorio)
+        {
+            case 0:
+                nodos = SpawnersManagers.spawnersManagersInstance.nodos;
+                break;
+            case 1:
+                nodos = SpawnersManagers.spawnersManagersInstance.nodos2;
+                break;
+            case 2:
+                nodos = SpawnersManagers.spawnersManagersInstance.nodos3;
+                break;
+        }
     }
 
     void Start()

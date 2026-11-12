@@ -248,7 +248,7 @@ MonoBehaviour:
   smallExplotion: {fileID: 8817283507220432574, guid: c164f1636cf6fe04e8f020b8679fce90, type: 3}
   bigExplosion: {fileID: 7064008340077560125, guid: a6008a11e46e4f6419a2f1464e3b1236, type: 3}
   point: 5
-  life: 1
+  life: 2
   smallExplosionSound: {fileID: 0}
   bigExplosionSound: {fileID: 8300000, guid: a66b0dad857f1524f8cf061108ebd8ab, type: 3}
 --- !u!114 &953590441000280718
@@ -299,4 +299,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  duracion: 25
+  duracion: 20

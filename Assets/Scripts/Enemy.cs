@@ -15,12 +15,16 @@ public class Enemy : MonoBehaviour
     public void QuitarVida()
     {
         life -= 1;
-        if (smallExplotion != null)
+        if (life > 0)
         {
-            Instantiate(smallExplotion, transform.position + 
-                new Vector3(0,0,-0.1f), Quaternion.identity);
+            if (smallExplotion != null)
+            {
+                Instantiate(smallExplotion, transform.position +
+                    new Vector3(0, 0, -0.1f), Quaternion.identity);
+            }
+            FXManager.fxManagerInstance.PlaySound(smallExplosionSound);
         }
-        FXManager.fxManagerInstance.PlaySound(smallExplosionSound);
+        
     }
 
     public void Morir()
