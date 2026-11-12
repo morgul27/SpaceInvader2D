@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int number)
     {
         puntuacionTotal = puntuacionTotal + number;
-        Debug.Log("la puntuacion es: " + puntuacionTotal);
+        //Debug.Log("la puntuacion es: " + puntuacionTotal);
         scoreText.text = "Score: " + puntuacionTotal.ToString();
     }
 

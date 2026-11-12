@@ -17,7 +17,8 @@ public class Enemy : MonoBehaviour
         life -= 1;
         if (smallExplotion != null)
         {
-            Instantiate(smallExplotion, transform.position, Quaternion.identity);
+            Instantiate(smallExplotion, transform.position + 
+                new Vector3(0,0,-0.1f), Quaternion.identity);
         }
         FXManager.fxManagerInstance.PlaySound(smallExplosionSound);
     }

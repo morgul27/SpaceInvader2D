@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0171ffb8bc8a7a649a6c1afcb6506517
-      internalID: 1042610581
+      spriteID: 37c6cfd130134e24289271ed3bb9e370
+      internalID: -1586420547
       vertices: []
       indices: 
       edges: []
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 366b1bfcb18d1c04a8bf2ec198c5e821
-      internalID: 1263271335
+      spriteID: f79a90182ca5c1649a3bb48749cc9338
+      internalID: -206765104
       vertices: []
       indices: 
       edges: []
@@ -183,8 +183,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 610afec368fe3bd4d9331cba4af39db8
-      internalID: -921293883
+      spriteID: 315d8270a4c99d04ea5bb6a45950b006
+      internalID: -1237496866
       vertices: []
       indices: 
       edges: []
@@ -206,9 +206,9 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       SmallExplotion-Sheet_0: -2875554473037866461
-      SmallExplotion-Sheet_1: 1042610581
-      SmallExplotion-Sheet_2: 1263271335
-      SmallExplotion-Sheet_3: -921293883
+      SmallExplotion-Sheet_1: -1586420547
+      SmallExplotion-Sheet_2: -206765104
+      SmallExplotion-Sheet_3: -1237496866
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
