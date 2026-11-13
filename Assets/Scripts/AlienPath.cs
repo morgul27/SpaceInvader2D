@@ -8,13 +8,13 @@ public class AlienPath : MonoBehaviour
 
     private void Awake()
     {
-        int indiceAleatorio = Random.Range(0, 3);
-        Debug.Log("numero aleatorio es " + indiceAleatorio);
+        int currentWavetTemp = SpawnersManagers.spawnersManagersInstance.currentWave;
 
-        switch (indiceAleatorio)
+      
+        switch (currentWavetTemp)
         {
             case 0:
-                nodos = SpawnersManagers.spawnersManagersInstance.nodos;
+                nodos = SpawnersManagers.spawnersManagersInstance.nodos1;
                 break;
             case 1:
                 nodos = SpawnersManagers.spawnersManagersInstance.nodos2;
@@ -23,6 +23,7 @@ public class AlienPath : MonoBehaviour
                 nodos = SpawnersManagers.spawnersManagersInstance.nodos3;
                 break;
         }
+
     }
 
     void Start()

@@ -18,7 +18,9 @@ GameObject:
   - component: {fileID: 3095918474028973577}
   - component: {fileID: 953590441000280718}
   - component: {fileID: 3758090801368935319}
+  - component: {fileID: 2560499741397322962}
   - component: {fileID: 7062146413190583714}
+  - component: {fileID: 3199223559564522429}
   m_Layer: 11
   m_Name: AlienR1
   m_TagString: Untagged
@@ -278,6 +280,20 @@ MonoBehaviour:
   rbd2d: {fileID: 7160036420716459571}
   enemydireccion: {x: 1, y: 0}
   speed: 1
+--- !u!114 &2560499741397322962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4793648799058698012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280613bc8eef50748a042b56b5e0f2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerPowerUp
+  dropChance: 5
+  powerUp: {fileID: 347825175212743555, guid: 68be24c9f82b18f49bfcd826ce8075f0, type: 3}
 --- !u!114 &7062146413190583714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,3 +316,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   duracion: 20
+--- !u!114 &3199223559564522429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4793648799058698012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f2464fa3809b643ad8d1ff14d920ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoDestruction
+  destructionTime: 25

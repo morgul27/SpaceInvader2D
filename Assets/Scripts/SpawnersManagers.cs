@@ -4,17 +4,22 @@ public class SpawnersManagers : MonoBehaviour
 {
     public static SpawnersManagers spawnersManagersInstance;
 
-    public Transform[] nodos; //Los nodos del camino
-    public Transform[] nodos2;
-    public Transform[] nodos3;
+
+    [Header("Los caminos")]
+    public Transform[] nodos1, nodos2, nodos3; //Los nodos del camino
 
     [SerializeField] GameObject[] enemies;
     [SerializeField] Transform[] spawnerPositions;
 
     [SerializeField] float enemyDelay;
     [SerializeField] float counterTime;
-    int position;
 
+    [Header ("Datos de la ola")]
+    public int currentWave; //Ola actual en la que estamos
+    [SerializeField] int[] enemiesWavesCounter; //enemigos creados en esa ola
+    [SerializeField] int[] enemiesWavesTotal; //cuantos enemigos hay en esta ola
+
+    //Toolkit, en vez de header y sirve para explicar que hace las variables
 
     private void Awake()
     {
@@ -24,12 +29,18 @@ public class SpawnersManagers : MonoBehaviour
     private void Update()
     {
         counterTime = counterTime + Time.deltaTime;
-        position = Random.Range(0, 2);
 
         if (counterTime >= enemyDelay)
         {
-            Instantiate(enemies[0], spawnerPositions[0].position, Quaternion.identity);
+            Instantiate(enemies[0], spawnerPositions[currentWave].position, Quaternion.identity);
             counterTime = 0;
+
+            enemiesWavesCounter[currentWave]++;
+            if (enemiesWavesCounter[currentWave] >= enemiesWavesTotal[currentWave])
+            {
+                currentWave++;
+            }
+            
         }
     }
 }
