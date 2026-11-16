@@ -22,6 +22,7 @@ public class LifeManager : MonoBehaviour
     {
         Debug.Log("te han quitado vida, ahora tiene: " + PlayerLife.playerLifeInstance.life);
         lifeText.text = "x" + PlayerLife.playerLifeInstance.life.ToString();
+        
     }
 
 }

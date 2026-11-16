@@ -1,12 +1,12 @@
 using System.Collections;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager scoreManagerInstance;
 
-    [SerializeField] int puntuacionTotal;
+    [SerializeField] int score;
     [SerializeField] TextMeshProUGUI scoreText;
 
     [Header("Configuración de Vibración")]
@@ -31,22 +31,22 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
-        scoreText.text = "Score: " + puntuacionTotal.ToString();
+        scoreText.text = "00000000";
         posicionOriginal = scoreRectTransform.anchoredPosition;
         intensidadActual = intensidadBase;
     }
 
-    public void AddScore(int number)
+    public void AddScore(int s)
     {
-        puntuacionTotal = puntuacionTotal + number;
-        //Debug.Log("la puntuacion es: " + puntuacionTotal);
-        scoreText.text = "Score: " + puntuacionTotal.ToString();
+        score = score + s;
+        scoreText.text = score.ToString("D8");
+        RecordManager.recordManagerInstance.CheckRecord(score);
 
         //a partir de aqui es vibracion de texto
-        while (puntuacionTotal >= siguienteMeta)
+        while (score >= siguienteMeta)
         {
-            siguienteMeta *= 2; 
-            intensidadActual = Mathf.Min(intensidadActual + 
+            siguienteMeta *= 2;
+            intensidadActual = Mathf.Min(intensidadActual +
                 incrementoIntensidad, intensidadMaxima);
         }
 

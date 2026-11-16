@@ -1,0 +1,14 @@
+Pixel Heart UI Pack:
+
+Features: 
+- PNG format
+- Transparent background
+- Approx. 7x9 pixels per heart (tight bounding box)
+- Includes single icons and different health bar states
+- Credit appreciated but not required.
+
+License:
+- Free to use in personal and commercial projects.
+- You may not redistribute, resell, or include these assets in asset packs or collections.
+
+

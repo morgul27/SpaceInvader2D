@@ -16,6 +16,7 @@ public class PlayerLife : MonoBehaviour
         if (life < 1)
         {
             Debug.Log("Se murio");
+            GameManager.gameManagerInstance.PlayerDie();
         }
     }
 }

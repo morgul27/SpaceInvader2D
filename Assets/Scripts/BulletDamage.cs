@@ -8,10 +8,6 @@ public class BulletDamage : MonoBehaviour
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             enemy.QuitarVida();
-            if(enemy.life <= 0)
-            {
-                enemy.Morir();
-            }
             Destroy(gameObject);
         }
     }

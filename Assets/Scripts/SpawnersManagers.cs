@@ -14,7 +14,7 @@ public class SpawnersManagers : MonoBehaviour
     [SerializeField] float enemyDelay;
     [SerializeField] float counterTime;
 
-    [Header ("Datos de la ola")]
+    [Header("Datos de la ola")]
     public int currentWave; //Ola actual en la que estamos
     [SerializeField] int[] enemiesWavesCounter; //enemigos creados en esa ola
     [SerializeField] int[] enemiesWavesTotal; //cuantos enemigos hay en esta ola
@@ -32,7 +32,7 @@ public class SpawnersManagers : MonoBehaviour
 
         if (counterTime >= enemyDelay)
         {
-            Instantiate(enemies[0], spawnerPositions[currentWave].position, Quaternion.identity);
+            Instantiate(enemies[currentWave], spawnerPositions[currentWave].position, Quaternion.identity);
             counterTime = 0;
 
             enemiesWavesCounter[currentWave]++;
@@ -40,7 +40,7 @@ public class SpawnersManagers : MonoBehaviour
             {
                 currentWave++;
             }
-            
+
         }
     }
 }
