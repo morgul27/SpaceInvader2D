@@ -6,9 +6,9 @@ public class EnemyDamage : MonoBehaviour
     {
         if (collision.gameObject.layer == 10)
         {
-            PlayerLife.playerLifeInstance.life -= 1;
-            LifeManager.lifeManagerInstance.LoseLife();
-            PlayerLife.playerLifeInstance.ComprobarVida();
+            
+            GameManager.gameManagerInstance.PlayerLoseLifes();
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }

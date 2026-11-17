@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,11 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManagerInstance;
 
-    [SerializeField] int lifes;
+    [SerializeField] int lifes = 3;
     [SerializeField] Image[] lifeSprites;
 
     [SerializeField] GameObject panelGameOver;
-    //[SerializeField] Player 
+    [SerializeField] GameObject player;
+    [SerializeField] TextMeshProUGUI lifeText;
 
 
     private void Awake()
@@ -17,15 +19,12 @@ public class GameManager : MonoBehaviour
         gameManagerInstance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public void PlayerDie()
+    public void PlayerLoseLifes()
     {
         lifes--;
+        Debug.Log("ha pasado 1 vez, " + lifes);
+        lifeText.text = "x" + lifes.ToString();
 
         for (int i = 0; i < lifeSprites.Length; i++)
         {
@@ -37,13 +36,13 @@ public class GameManager : MonoBehaviour
             lifeSprites[i].enabled = true;
         }
 
-        if(lifes <= 0)
+        if (lifes <= 0)
         {
             panelGameOver.SetActive(true);
         }
         else
         {
-            //Instantiate(player, transform.position,);
+            Instantiate(player, transform.position, Quaternion.identity);
         }
     }
 }

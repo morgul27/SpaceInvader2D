@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
 
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] Animator animator;
+    //[SerializeField] Animator animator;
 
     [SerializeField] Vector2 movement;
     private float minX, maxX, minY, maxY;
