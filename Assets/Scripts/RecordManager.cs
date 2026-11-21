@@ -13,7 +13,9 @@ public class RecordManager : MonoBehaviour
 
     private void Start()
     {
-        recordText.text = PlayerPrefs.GetInt("Record").ToString("D8");
+        int currentRecord = PlayerPrefs.GetInt("Record", 0);
+        recordText.text = currentRecord.ToString("D8");
+        gameOverRecordText.text = currentRecord.ToString($"Record: {currentRecord:D8}");
     }
 
     public void CheckRecord(int s)
