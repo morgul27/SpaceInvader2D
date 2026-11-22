@@ -21,6 +21,13 @@ public class SpawnersManagers : MonoBehaviour
 
     //Toolkit, en vez de header y sirve para explicar que hace las variables
 
+    [Header("Victoria")]
+    [SerializeField] GameObject victoryScreen;
+
+    bool allWavesSpawned = false;
+    bool victoryShown = false;
+
+
     private void Awake()
     {
         spawnersManagersInstance = this;
@@ -28,6 +35,16 @@ public class SpawnersManagers : MonoBehaviour
 
     private void Update()
     {
+
+        if (allWavesSpawned)
+        {
+            if (!victoryShown && !AreEnemiesAlive())
+            {
+                ShowVictory();
+            }
+            return;
+        }
+
         counterTime = counterTime + Time.deltaTime;
 
         if (counterTime >= enemyDelay)
@@ -39,8 +56,33 @@ public class SpawnersManagers : MonoBehaviour
             if (enemiesWavesCounter[currentWave] >= enemiesWavesTotal[currentWave])
             {
                 currentWave++;
+
+                if (currentWave >= enemiesWavesTotal.Length)
+                {
+                    allWavesSpawned = true;
+                }
             }
 
         }
     }
+
+    void ShowVictory()
+    {
+        victoryShown = true;
+        victoryScreen.SetActive(true);
+    }
+
+
+    bool AreEnemiesAlive()
+    {
+        int enemyLayer = LayerMask.NameToLayer("Enemy");
+
+        foreach (GameObject go in FindObjectsByType<GameObject>(FindObjectsSortMode.None))
+        {
+            if (go.layer == enemyLayer)
+                return true;
+        }
+        return false;
+    }
+
 }

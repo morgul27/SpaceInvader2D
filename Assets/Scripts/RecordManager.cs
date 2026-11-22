@@ -4,7 +4,7 @@ using UnityEngine;
 public class RecordManager : MonoBehaviour
 {
     public static RecordManager recordManagerInstance;
-    [SerializeField] TextMeshProUGUI recordText, gameOverRecordText;
+    [SerializeField] TextMeshProUGUI recordText, gameOverRecordText, victoryRecordText;
 
     private void Awake()
     {
@@ -15,7 +15,8 @@ public class RecordManager : MonoBehaviour
     {
         int currentRecord = PlayerPrefs.GetInt("Record", 0);
         recordText.text = currentRecord.ToString("D8");
-        gameOverRecordText.text = currentRecord.ToString($"Record: {currentRecord:D8}");
+        gameOverRecordText.text = $"Record: {currentRecord:D8}";
+        victoryRecordText.text = $"Record: {currentRecord:D8}";
     }
 
     public void CheckRecord(int s)
@@ -25,6 +26,7 @@ public class RecordManager : MonoBehaviour
             PlayerPrefs.SetInt("Record", s);
             recordText.text = s.ToString("D8");
             gameOverRecordText.text = s.ToString("D8");
+            victoryRecordText.text = s.ToString("D8");
         }
     }
 }
